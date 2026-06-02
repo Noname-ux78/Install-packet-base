@@ -2,6 +2,7 @@
 sudo pacman -Syu hyprland sddm vim nvim kitty wofi waybar awww firefox telegram-desktop git spotify-launcher blueman
 
 # установка LazyVim
+mkdir -p ~/.config/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
