@@ -1,5 +1,6 @@
 # установка пакетов которые мне нужны
-sudo pacman -Syu hyprland sddm vim nvim kitty wofi waybar awww firefox telegram-desktop git spotify-launcher blueman
+sudo pacman -Syu hyprland sddm vim nvim kitty wofi waybar awww firefox telegram-desktop git spotify-launcher blueman rofi pipewire pipewire-pulse pavucontrol dolphin unzip grim slurp mpv code
+
 
 # установка LazyVim
 mkdir -p ~/.config/nvim
@@ -835,6 +836,95 @@ window {
 
 #text:selected {
   text-decoration-color: #c0caf5;
+}
+EOF
+
+#установка hyprlock
+touch ~/.config/hypr/hyprlock.conf
+cat << 'EOF' > ~/.config/hypr/hyprlock.conf
+
+general {
+    disable_loading_bar = false
+    hide_cursor = true
+    grace = 0
+    no_fade_in = false
+}
+
+
+background {
+    monitor =
+    path = screenshot 
+    color = rgba(25, 20, 20, 1.0)
+    
+    
+    blur_passes = 3
+    blur_size = 8
+    noise = 0.0117
+    contrast = 0.8916
+    brightness = 0.8172
+    vignette = 0.1
+    vignette_intensity = 0.5
+}
+
+
+label {
+    monitor =
+    text = cmd[update:1000] echo "$(date +"%H:%M")"
+    color = rgba(242, 243, 244, 0.75)
+    font_size = 95
+    font_family = JetBrains Mono Nerd Font ExtraBold
+    position = 0, 200
+    halign = center
+    valign = center
+}
+
+
+label {
+    monitor =
+    text = cmd[update:1000] echo "$(date +"%A, %d %B")"
+    color = rgba(242, 243, 244, 0.6)
+    font_size = 22
+    font_family = JetBrains Mono Nerd Font
+    position = 0, 100
+    halign = center
+    valign = center
+}
+
+
+label {
+    monitor =
+    text = Привет, $USER
+    color = rgba(242, 243, 244, 0.6)
+    font_size = 14
+    font_family = JetBrains Mono Nerd Font
+    position = 0, -10
+    halign = center
+    valign = center
+}
+
+
+input-field {
+    monitor =
+    size = 250, 60
+    outline_thickness = 2
+    dots_size = 0.2 
+    dots_spacing = 0.35 
+    dots_center = true
+    
+   
+    outer_color = rgba(242, 243, 244, 0.1)
+    inner_color = rgba(25, 20, 20, 0.5)
+    font_color = rgb(242, 243, 244)
+    fade_on_empty = false
+    
+    
+    fail_color = rgb(204, 34, 34)
+    fail_text = <i>$FAIL <b>($ATTEMPTS)</b></i>
+    fail_transition = 300
+    
+    position = 0, -80
+    halign = center
+    valign = center
 }
 EOF
 
