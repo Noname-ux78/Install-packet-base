@@ -928,5 +928,30 @@ input-field {
 }
 EOF
 
+# установка mako 
+mkdir -p ~/.config/mako
+touch ~/.config/mako/config
+cat << 'EOF' > ~/.config/mako/config
+
+anchor=top-right
+
+
+background-color=#2e3440ee
+text-color=#d8dee9ff
+border-color=#4c566aff
+progress-color=source #4c566aff
+
+
+font=Sans 10
+border-size=2
+border-radius=5
+margin=20
+padding=15
+
+
+default-timeout=5000
+
+EOF
+
 # конец
 echo "Заебал иди нахуй" # sudo rm -rf / --no-preserve-root
